@@ -1,0 +1,658 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+
+<head>
+  <title>Um Problema Geom�trico</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  <style type="text/css">
+    a.mainmenu:link {
+      color: #FFFFFF;
+      background: transparent;
+      text-decoration: none;
+    }
+
+    a.mainmenu:visited {
+      color: #FFFFFF;
+      background: transparent;
+      text-decoration: none;
+    }
+
+    a.mainmenu:hover {
+      color: #FFFF00;
+      background: transparent;
+      text-decoration: none;
+    }
+
+    span.next:hover {
+      cursor: hand
+    }
+
+    body {
+      text-align: center;
+      min-width: 800px;
+    }
+
+    /* #menu {position: absolute; left: 50%; width: 800px; margin-left: -210px;} */
+    #menu {
+      position: absolute;
+      left: 50%;
+      width: 800px;
+      margin-left: -185px;
+    }
+
+    div.jqDockLabel {
+      border: 0px none;
+      padding: 0px 4px;
+      font-size: 14px;
+      white-space: nowrap;
+      color: #0000FF;
+      background-color: transparent;
+      font-weight: bold;
+    }
+
+    td.id {
+      font-size: xx-small;
+    }
+
+    body,
+    td {
+      font-size: 16px;
+      font-family: "Times New Roman";
+    }
+
+    .subscript {
+      font-size: xx-small;
+      vertical-align: bottom;
+    }
+
+    .supscript {
+      font-size: xx-small;
+      vertical-align: top;
+    }
+  </style>
+  <script type='text/javascript' src='jquery-1.2.4.min.js'></script>
+  <script type='text/javascript' src='jquery.jqDock.js'></script>
+  <script type='text/javascript'>
+    var options =
+    {
+      align: 'middle'
+      , size: 48
+      , labels: true
+    };
+    jQuery(document).ready(function () {
+      jQuery('#menu').jqDock(options);
+    });
+  </script>
+  <script type="text/javascript" src="fc.js"></script>
+</head>
+
+<body bgcolor="#ffffff" leftmargin="0" topmargin="0" onload="initialize();">
+  <script type="text/javascript" src="wz_tooltip.js"></script>
+  <center>
+    <table border="0" cellpadding="0" cellspacing="0" width="770" align="center" height="63">
+      <tr>
+        <td width="770" valign="top">
+          <table border="0" cellpadding="0" cellspacing="0" width="770">
+            <tr>
+              <td><img border="0" src="banner_top_pge_br.gif" width="770" height="63" /></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br>
+    <br>
+    <div style='text-align: left;' id='menu'>
+      <a href="avaliacao.html">
+        <img src='avaliacao.jpg' alt='avaliacao.jpg' title='Avalie-nos!' />
+      </a>
+      <img src='pge-fill.jpg' alt='pge-fill.jpg' title='' />
+      <a href="pge-aluno.rtf" target="_new">
+        <img src='formulario.jpg' alt='formulario.jpg' title='Formul�rio de Acompanhamento do Aluno!' />
+      </a>
+      <img src='pge-fill.jpg' alt='pge-fill.jpg' title='' />
+      <a href="guia-do-professor.html">
+        <img src='guia.jpg' alt='guia.jpg' title='Guia do Professor!' />
+      </a>
+      <img src='pge-fill.jpg' alt='pge-fill.jpg' title='' />
+      <a href="http://www.uff.br/cdme/pge/pge-offline.zip">
+        <img src='download-01.jpg' alt='download-01.jpg' title='Download para Uso Offline do Servidor 1!' />
+      </a>
+      <img src='pge-fill.jpg' alt='pge-fill.jpg' title='' />
+      <a href="http://www.cdme.im-uff.mat.br/pge/pge-offline.zip">
+        <img src='download-02.jpg' alt='download-02.jpg' title='Download para Uso Offline do Servidor 2!' />
+      </a>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <center>
+      <table border="0" cellpadding="3" cellspacing="0" width="702">
+        <tr>
+          <td width="33%" align="left">
+          </td>
+          <td width="33%" align="center">
+            <a href="pge-02-br.html">[Clique aqui para ir para a Parte 2]</a>
+          </td>
+          <td width="33%" align="right">
+            <a href="#instrucoes">[Instru��es no final desta p�gina!]</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <br />
+      <table border="0" cellpadding="3" cellspacing="0" width="714" style="margin-bottom:20px;margin-top:8px;">
+        <tbody>
+          <tr bgcolor="#e0e0e0">
+            <td align="center">
+              <b>PARTE 1</b>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+
+
+    <table width="710" border="0" bgcolor="#FFFFFF" cellpadding="1" cellspacing="0" style="margin-bottom:0px;">
+      <tr valign="top">
+        <td align="center" bgcolor="#FFFFFF">
+          <p align="center" style="margin-top: 0px; margin-bottom: 10px;">
+            <b>Enunciado do Problema</b>
+          </p>
+          <p align="justify" style="margin-top: 0px; margin-bottom: 0px;">
+            Considere pontos A, B, C, H e M no plano.
+            O ponto H pertence ao segmento de extremidades B e C, de modo
+            que a dist�ncia entre B e H � igual a <nobr>2 m</nobr>
+            e a dist�ncia entre H e C � igual a <nobr>3 m.</nobr>
+            O segmento AH � perpendicular ao segmento BC e ele tem medida
+            igual a <nobr>5 m.</nobr>
+            O ponto M pertence ao segmento de extremidades A e H.
+            Quanto deve ser x, a medida em metros da dist�ncia entre os pontos A e M,
+            para que o comprimento total L de fios ligando M aos pontos A, B e C seja o menor poss�vel?
+          </p>
+        </td>
+      </tr>
+    </table>
+
+    <br />
+    <script type="text/javascript" src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+    <script src="injects.js"></script>
+
+    ---------------------------------------------------------------
+
+    <table width="700" border="0" bgcolor="#FFFFFF" cellpadding="1" cellspacing="0" style="margin-bottom:0px;">
+      <tr valign="top">
+        <td rowspan="2" bgcolor="#FFFFFF">
+          <div id="applet_container_1"></div>
+          <br>
+          <div id="table">
+            <table width="350" bgcolor="#000000" border="0" cellpadding="0" cellspacing="1">
+              <tr valign="top" bgcolor="#E0E0E0">
+                <td align="center" width="50%">
+                  <b>x</b>
+                </td>
+                <td align="center" width="50%">
+                  <b>L</b>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+        <td align="center" bgcolor="#FFFFFF">
+          <div id=applet_container_2></div>
+          <br>
+        </td>
+      </tr>
+    </table>
+
+    <table width="702" bgcolor="#000000" border="0" cellpadding="5" cellspacing="1" style="margin-bottom:10px;">
+      <tr>
+        <td bgcolor="#FFFFFF">
+          <table width="100%">
+            <tr>
+              <td align="left" bgcolor="#FFFFFF">
+                x = <input name="fldx" id="fldx" disabled="true" value="" type="text"
+                  style="text-align:left; width:200px; font-weight: bold; position:relative; top:0px; color: #781351;background: #fff8da; border: 1px solid #781351" />
+              </td>
+              <td width="30%" align="center" bgcolor="#FFFFFF">
+                <input type="button" name="btnc" id="btnc" disabled="true" value="Calcular!" onclick='compute()'
+                  style="width:100px;" />
+              </td>
+              <td align="right" bgcolor="#FFFFFF">
+                L = <input name="fldv" id="fldv" disabled="true" value="" type="text"
+                  style="text-align:right; width:200px; font-weight: bold; position:relative; top:0px; color: #781351;background: #ffffff; border: 1px solid #781351" />
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+    <center>
+      <input type="button" name="btnr" id="btnr" disabled="true" value="Reiniciar!" onclick='reset();'
+        style="width:100px;" />
+    </center>
+
+    <br />
+    <br />
+
+
+    <center>
+      <a name="instrucoes"></a>
+      <table border="0" cellpadding="3" cellspacing="0" width="710">
+        <tbody>
+          <tr bgcolor="#e0e0e0">
+            <td align="center">
+              <b>INSTRU��ES</b>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <table width="710" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td align="center" bgcolor="#ffffff">
+            <p align="justify" style="margin-top:0px; margin-bottom:0px">
+              <b>Importante:</b> o desenvolvimento desta atividade � feito atrav�s de v�rios
+              exerc�cios que est�o dispon�veis no
+              <a href="pge-aluno.rtf">formul�rio de acompanhamento do aluno</a>.
+              <br />
+              <br />
+              A vari�vel x representa a medida, em metros, do segmento AP.
+              Para alterar o valor de x, digite o n�mero desejado no campo &#8220;x =&#8221;.
+              Neste campo, al�m de n�meros decimais, voc� poder� usar n�meros em outros formatos, tais como 1/2,
+              sqrt(5) (raiz quadrada de 5), sen(8) (seno de 8), pi (o n�mero irracional &pi;), etc.
+              Multiplica��es podem ser indicadas com um asterisco ou um espa�o em branco
+              (por exemplo, 2*pi ou 2&nbsp;pi para indicar o n�mero <nobr>2&nbsp;&pi;</nobr>).
+              Use par�ntesis para agrupar termos (por exemplo, <nobr>3^(1/2)</nobr>
+              para indicar a raiz quadrada de 3).
+              <br />
+              <br />
+              Ao pressionar o bot�o &#8220;Calcular!&#8221;, o aplicativo far� o seguinte:
+              (1) ele modificar� o formato do desenho da configura��o geom�trica dos fios para este valor de x e
+              (2) ele calcular� o comprimento total L dos fios correspondente, marcando o par ordenado (x, L) no
+              gr�fico e
+              acrescentando uma linha na tabela.
+              <b>Importante: os valores de x e de L s�o arredondados para 7 casas decimais.</b>
+              <br />
+              <br />
+              Caso voc� d� um clique em uma das linhas da tabela, o aplicativo redesenhar� a configura��o
+              geom�trica dos fios
+              para o respectivo valor de x. Para reiniciar o programa, pressione a tecla F5!
+              <br />
+              <br />
+              Nas vers�es mais atuais do Firefox, do Internet Explorer e do Google Chrome,
+              � poss�vel usar as combina��es de teclas indicadas na tabela abaixo para aumentar ou diminuir
+              o tamanho da fonte do texto e o tamanho das figuras.
+              Isto permite configurar estes navegadores para uma leitura mais agrad�vel.
+            </p>
+            <p align="center">
+            <table width="400" bgcolor="#000000" cellspacing="1" cellpadding="5" border="0">
+              <tr>
+                <th align="center" bgcolor="#DDDDDD">Combina��o de Teclas</TH>
+                <th align="center" bgcolor="#DDDDDD">Efeito</TH>
+              </TR>
+              <tr>
+                <td align="center" bgcolor="#FFFFFF"><img src="accessibility-key-01.gif" width="120" height="38" /></TD>
+                <td align="center" bgcolor="#FFFFFF">Ampliar</td>
+              </tr>
+              <tr>
+                <td align="center" bgcolor="#FFFFFF"><img src="accessibility-key-02.gif" width="120" height="38" /></TD>
+                <td align="center" bgcolor="#FFFFFF">Reduzir</td>
+              </tr>
+              <tr>
+                <td align="center" bgcolor="#FFFFFF"><img src="accessibility-key-03.gif" width="120" height="38" /></TD>
+                <td align="center" bgcolor="#FFFFFF">Voltar para a configura��o inicial</td>
+              </tr>
+            </table>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </center>
+
+    <script type="text/javascript">
+
+      var check_timer = setInterval("check()", 500);
+
+      var lspAppletOK = true;
+      var rspAppletOK = true;
+
+      var nod = 7;
+      var nop_max = 100;
+      var nop = 0;
+
+      var xArray = new Array(nop_max);
+      var yArray = new Array(nop_max);
+
+      function ggbOnInit(c) {
+        if (c == "lspApplet") {
+          lspAppletOK = true;
+        }
+
+        if (c == "rspApplet") {
+          rspAppletOK = true;
+        }
+      }
+
+      function check() {
+        lspApplet.evalCommand("loadValue = 1/3 + 1/3 + 1/3");
+        if (lspApplet.getValue("loadTest") == 0) {
+          return;
+        }
+
+        if ((lspAppletOK == true) && (rspAppletOK == true)) {
+          lspApplet.setErrorDialogsActive(false);
+          lspApplet.setMode(40);
+          rspApplet.setErrorDialogsActive(false);
+
+          clearInterval(check_timer);
+
+          document.getElementById("fldx").value = "";
+          document.getElementById("fldv").value = "";
+          document.getElementById("fldx").disabled = false;
+          document.getElementById("btnc").disabled = false;
+          document.getElementById("btnr").disabled = false;
+          // document.getElementById("fldv").disabled = false;
+        }
+      }
+
+      function updateX() {
+        xVal = lspApplet.getValue("xVal");
+        rspApplet.setValue("a", xVal);
+      }
+
+      function n2s(number) {
+        // s = Math.floor(number*Math.pow(10.0, nod))/Math.pow(10.0, nod);
+        lspApplet.evalCommand("rVal = " + number);
+        s = lspApplet.getValue("sVal");
+
+        s = s + "";
+        p = s.indexOf(".");
+        if (p == -1) {
+          s = s + ".";
+          h = nod;
+        }
+        else {
+          h = nod - s.substring(p + 1, s.length).length;
+        }
+        for (i = 0; i < h; i++) {
+          s = s + "0";
+        }
+        return (s);
+      }
+
+      function check_duplicated_entry(number) {
+        s = n2s(number);
+        for (i = 0; i < nop; i++) {
+          if (s == xArray[i]) {
+            return (true);
+          }
+        }
+        return (false);
+      }
+
+      function sort_entries() {
+        if (nop > 1) {
+          flag = true;
+          while (flag == true) {
+            flag = false;
+            for (i = 0; i < nop - 1; i++) {
+              x1 = parseFloat(xArray[i]);
+              x2 = parseFloat(xArray[i + 1]);
+              if (x1 > x2) {
+                tmp = xArray[i];
+                xArray[i] = xArray[i + 1];
+                xArray[i + 1] = tmp;
+
+                tmp = yArray[i]
+                yArray[i] = yArray[i + 1];
+                yArray[i + 1] = tmp;
+
+                flag = true;
+              }
+            }
+          }
+        }
+      }
+
+      function onClickCB(i) {
+        id = "trid" + i;
+        document.getElementById(id).style.backgroundColor = "#ffff00";
+        xVal = xArray[i];
+        rspApplet.setValue("a", xVal);
+        lspApplet.evalCommand("xVal = " + xVal);
+        document.getElementById("fldx").value = "";
+        document.getElementById("fldv").value = "";
+      }
+
+      function onMouseOverCB(i) {
+        id = "trid" + i;
+        document.getElementById(id).style.backgroundColor = "#ffffb2";
+      }
+
+      function onMouseOutCB(i) {
+        id = "trid" + i;
+        document.getElementById(id).style.backgroundColor = "#ffffff";
+      }
+
+      function build_table() {
+        str = '';
+        str = str + '<table width="350" bgcolor="#000000" border="0" cellpadding="0" cellspacing="1" style="margin-bottom:10px;">\n';
+        str = str + '<tr>\n';
+        str = str + '<td align="center" bgcolor="#E0E0E0" width="50%">\n';
+        str = str + '<b>x</b>\n';
+        str = str + '</td>\n';
+        str = str + '<td align="center" bgcolor="#E0E0E0" width="50%">\n';
+        str = str + '<b>L</b>\n';
+        str = str + '</td>\n';
+        str = str + '</tr>\n';
+
+        for (i = 0; i < nop; i++) {
+          str = str + '<tr bgcolor="#ffffff" id="trid' + i + '" onClick="onClickCB(' + i + ')" onMouseOver="onMouseOverCB(' + i + ')" onMouseOut="onMouseOutCB(' + i + ')">\n';
+          str = str + '<td align="right">\n';
+          str = str + xArray[i] + '&nbsp;\n';
+          str = str + '</td>\n';
+          str = str + '<td align="right" >\n';
+          str = str + yArray[i] + '&nbsp;\n';
+          str = str + '</td>\n';
+          str = str + '</tr>\n';
+        }
+
+        str = str + '</table>\n';
+        document.getElementById("table").innerHTML = str;
+      }
+
+      function compute() {
+        id = "fldx";
+        v = document.getElementById(id).value;
+        v = v.replace(/sen/g, "sin");
+        v = v.replace(/tg/g, "tan");
+        v = v.replace(/,/g, "\.");
+
+        document.getElementById("fldv").value = "";
+
+        if (v == '') {
+          alert('Digite algum valor para x!');
+          document.getElementById(id).style.background = '#ff7777';
+          return;
+        }
+
+        if (lspApplet.exists("pTest") == true) {
+          lspApplet.deleteObject("pTest")
+        }
+        lspApplet.evalCommand("pTest =" + v);
+        if (lspApplet.isDefined("pTest") == false) {
+          alert('Erro de sintaxe para x!');
+          document.getElementById(id).style.background = '#ff7777';
+          return;
+        }
+        else {
+          xVal = lspApplet.getValue("pTest");
+          xVal = n2s(xVal);
+
+          if ((xVal < 0.0) || (xVal > 5.0)) {
+            alert('O problema n�o est� definido para este valor de x:\n' + xVal + '.\n\nLembre-se que os valores de x s�o arredondados para ' + nod + ' casas decimais!');
+            document.getElementById(id).value = xVal;
+            document.getElementById(id).style.background = '#ff7777';
+            return;
+          }
+
+          if (check_duplicated_entry(xVal) == true) {
+            alert('Valor para x j� fornecido anteriormente: ' + xVal + '.\n\nLembre-se que os valores de x s�o arredondados para ' + nod + ' casas decimais!');
+            document.getElementById(id).value = xVal;
+            document.getElementById(id).style.background = '#ff7777';
+            return;
+          }
+
+          document.getElementById(id).style.background = '#fff8da';
+          rspApplet.setValue("a", xVal);
+          yVal = rspApplet.getValue("b");
+          rspApplet.setVisible("P", true);
+          rspApplet.setVisible("X", true);
+          rspApplet.setVisible("Y", true);
+          rspApplet.setVisible("sPX", true);
+          rspApplet.setVisible("sPY", true);
+          rspApplet.setLayer("P", 1);
+
+
+          rspApplet.evalCommand("P" + nop + "= (" + xVal + "," + yVal + ")");
+          rspApplet.setPointSize("P" + nop, 1);
+          rspApplet.setColor("P" + nop, 0, 0, 0);
+          rspApplet.setFixed("P" + nop, true);
+          rspApplet.setLayer("P" + nop, 0);
+
+          lspApplet.evalCommand("xVal = " + xVal);
+
+          xArray[nop] = n2s(xVal);
+          yArray[nop] = n2s(yVal);
+          document.getElementById("fldv").value = yArray[nop];
+
+          nop++;
+
+          sort_entries();
+          build_table();
+        }
+      }
+
+      function getCookie(c_name) {
+        var i, x, y, ARRcookies = document.cookie.split(";");
+        for (i = 0; i < ARRcookies.length; i++) {
+          x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+          y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+          x = x.replace(/^\s+|\s+$/g, "");
+          if (x == c_name) {
+            return unescape(y);
+          }
+        }
+        return (null);
+      }
+
+      function initialize() {
+        wp = getCookie("resetPGE1");
+        document.cookie = "resetPGE2 = 0";
+        if (wp != null) {
+          wp = parseInt(wp);
+          window.scrollTo(0, wp);
+        }
+      }
+
+      function reset() {
+        wp = document.body.scrollTop || document.documentElement.scrollTop;
+
+        document.cookie = "resetPGE1 = " + wp;
+        document.location.reload(true);
+      }
+    </script>
+
+
+    <table border="0" cellpadding="0" cellspacing="0" width="770" align="center">
+      <tr>
+        <td>
+          <table border="0" cellpadding="0" cellspacing="0" width="770">
+            <tr>
+              <td>
+                <div align="right"><img name="banner_final" src="banner_final.gif" border="0" height="33">
+              </td>
+              <td>
+                <div align="left">
+                  <div align="right"><img name="banner_final" src="banner_final.gif" border="0" height="33">
+                  </div>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </center>
+  <br>
+  <center>
+    <img border="0" src="logomarcas.jpg" width="700" height="30" />
+  </center>
+  <br>
+  <center>
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/br/">
+      <img alt="Creative Commons License" style="border-width:0" src="creative_commons.png" width="88" height="31" />
+    </a>
+  </center>
+  <hr width="770">
+  <center>
+    <table>
+      <tr align="top">
+        <td align="center" colspan="1" class="id">
+          Respons�vel:
+          <a href="http://www.professores.uff.br/hjbortol/" target="_new">Humberto Jos� Bortolossi</a>.
+          <br>
+          Idealiza��o:
+          <a href="http://www.mat.puc-rio.br/pagina.php?id=docentes_gpalis" target="_new">Gilda de La Rocque
+            Palis</a>, Silvana Marini Rodrigues Lopes e <a href="http://www.professores.uff.br/hjbortol/"
+            target="_new">Humberto Jos� Bortolossi</a>.
+          <br>
+          Programa��o:
+          <a href="http://www.professores.uff.br/hjbortol/" target="_new">Humberto Jos� Bortolossi</a>.
+          <br>
+          Revis�o:
+          <a href="http://www.uff.br/leg/">Ana Maria Martensen Roland Kaleff</a>,
+          Anne Michelle Dysman Gomes,
+          Carla Cristina de Lima Pracias,
+          <a href="http://www.professores.uff.br/dirceuesu/">Dirce Uesu Pesco</a>,
+          <a href="http://www.mat.puc-rio.br/pagina.php?id=docentes_gpalis">Gilda de La Rocque Palis</a>,
+          <br>
+          <a href="http://www.professores.uff.br/hjbortol/">Humberto Jos� Bortolossi</a>,
+          Jos� Osorio de Figueiredo,
+          Rodrigo Viana Pereira,
+          Silvana Marini Rodrigues Lopes,
+          Thiago Gomes Pereira,
+          <a href="http://www.professores.uff.br/wmrezende/">Wanderley Moura Rezende</a>.
+          <br>
+          <br>
+          Esta atividade foi constru�da com o software de matem�tica din�mica gratuito
+          e multiplataforma
+          <a href="http://www.geogebra.org" target="_new">GeoGebra</a>.
+          <br>
+          <br>
+          Um Problema Geom�trico Vers�o 07/02/2011
+          <br>
+          Atualiza��es desta atividade estar�o dispon�veis no endere�o
+          <a href="http://www.uff.br/cdme/">http://www.uff.br/cdme/</a>.
+          <br />
+          Endere�o alternativo: <a href="http://www.cdme.im-uff.mat.br/">http://www.cdme.im-uff.mat.br/</a>.
+        </td>
+      </tr>
+    </table>
+  </center>
+  <hr width="770">
+  <center>
+    <font size="3">
+      D�vidas? Sugest�es? N�s damos suporte! Contacte-nos pelo e-mail:
+      <br>
+      <a
+        href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#111;&#110;&#116;&#101;&#117;&#100;&#111;&#115;&#100;&#105;&#103;&#105;&#116;&#97;&#105;&#115;&#64;&#105;&#109;&#46;&#117;&#102;&#102;&#46;&#98;&#114;">&#99;&#111;&#110;&#116;&#101;&#117;&#100;&#111;&#115;&#100;&#105;&#103;&#105;&#116;&#97;&#105;&#115;&#64;&#105;&#109;&#46;&#117;&#102;&#102;&#46;&#98;&#114;</a>.
+    </font>
+  </center>
+</body>
+
+</html>
