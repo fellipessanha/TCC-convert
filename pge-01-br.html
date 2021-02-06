@@ -178,10 +178,10 @@
     </table>
 
     <br />
+
+    <!-- invocando os applets -->
     <script type="text/javascript" src="https://cdn.geogebra.org/apps/deployggb.js"></script>
     <script src="injects.js"></script>
-
-    ---------------------------------------------------------------
 
     <table width="700" border="0" bgcolor="#FFFFFF" cellpadding="1" cellspacing="0" style="margin-bottom:0px;">
       <tr valign="top">
@@ -318,8 +318,8 @@
 
       var check_timer = setInterval("check()", 500);
 
-      var lspAppletOK = true;
-      var rspAppletOK = true;
+      var lspAppletOK = false;
+      var rspAppletOK = false;
 
       var nod = 7;
       var nop_max = 100;
@@ -341,7 +341,8 @@
       function check() {
         lspApplet.evalCommand("loadValue = 1/3 + 1/3 + 1/3");
         if (lspApplet.getValue("loadTest") == 0) {
-          return;
+          ggbOnInit("lspApplet");
+          ggbOnInit("rspApplet");
         }
 
         if ((lspAppletOK == true) && (rspAppletOK == true)) {

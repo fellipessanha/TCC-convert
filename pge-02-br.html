@@ -193,7 +193,6 @@
       </tr>
     </table>
 
-
     <table width="702" bgcolor="#000000" border="0" cellpadding="5" cellspacing="1" style="margin-bottom:10px;">
       <tr>
         <td bgcolor="#FFFFFF">
@@ -387,8 +386,8 @@
       var check_timer = setInterval("check()", 500);
 
       // TODO
-      var lspAppletOK = true;
-      var rspAppletOK = true;
+      var lspAppletOK = false;
+      var rspAppletOK = false;
       // true imposto para degub, depois consertar TODO
       var jvxAppletOK = true;
 
@@ -415,10 +414,11 @@
       }
 
       function check() {
-        //lspApplet.evalCommand("loadValue = 1/3 + 1/3 + 1/3");
-        //if (lspApplet.getValue("loadTest") == 0) {
-        //  return;
-        //}
+        lspApplet.evalCommand("loadValue = 1/3 + 1/3 + 1/3");
+        if (lspApplet.getValue("loadTest") == 0) {
+          ggbOnInit("lspApplet");
+          ggbOnInit("rspApplet");
+        }
 
         if ((lspAppletOK == true) && (rspAppletOK == true) &&
           (jvxAppletOK == true)) {
